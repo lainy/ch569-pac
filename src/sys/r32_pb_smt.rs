@@ -1,81 +1,35 @@
 #[doc = "Register `R32_PB_SMT` reader"]
-pub struct R(crate::R<R32_PB_SMT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R32_PB_SMT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R32_PB_SMT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R32_PB_SMT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R32PbSmtSpec>;
 #[doc = "Register `R32_PB_SMT` writer"]
-pub struct W(crate::W<R32_PB_SMT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R32_PB_SMT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R32_PB_SMT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R32_PB_SMT_SPEC>) -> Self {
-        W(writer)
-    }
-}
-#[doc = "Field `R32_PB_SMT` reader - GPIO PB output slew rate and input schmitt trigger"]
-pub type R32_PB_SMT_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `R32_PB_SMT` writer - GPIO PB output slew rate and input schmitt trigger"]
-pub type R32_PB_SMT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, R32_PB_SMT_SPEC, u32, u32, 25, O>;
+pub type W = crate::W<R32PbSmtSpec>;
+#[doc = "Field `R32_PB_SMT` reader - GPIO PB output slew rate_input schmitt trigger"]
+pub type R32PbSmtR = crate::FieldReader<u32>;
+#[doc = "Field `R32_PB_SMT` writer - GPIO PB output slew rate_input schmitt trigger"]
+pub type R32PbSmtW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
-    #[doc = "Bits 0:24 - GPIO PB output slew rate and input schmitt trigger"]
+    #[doc = "Bits 0:24 - GPIO PB output slew rate_input schmitt trigger"]
     #[inline(always)]
-    pub fn r32_pb_smt(&self) -> R32_PB_SMT_R {
-        R32_PB_SMT_R::new((self.bits & 0x01ff_ffff) as u32)
+    pub fn r32_pb_smt(&self) -> R32PbSmtR {
+        R32PbSmtR::new(self.bits & 0x01ff_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 0:24 - GPIO PB output slew rate and input schmitt trigger"]
+    #[doc = "Bits 0:24 - GPIO PB output slew rate_input schmitt trigger"]
     #[inline(always)]
-    pub fn r32_pb_smt(&mut self) -> R32_PB_SMT_W<0> {
-        R32_PB_SMT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn r32_pb_smt(&mut self) -> R32PbSmtW<'_, R32PbSmtSpec> {
+        R32PbSmtW::new(self, 0)
     }
 }
-#[doc = "GPIO PB output slew rate and input schmitt trigger\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r32_pb_smt](index.html) module"]
-pub struct R32_PB_SMT_SPEC;
-impl crate::RegisterSpec for R32_PB_SMT_SPEC {
+#[doc = "GPIO PB output slew rate_input schmitt trigger\n\nYou can [`read`](crate::Reg::read) this register and get [`r32_pb_smt::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r32_pb_smt::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R32PbSmtSpec;
+impl crate::RegisterSpec for R32PbSmtSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [r32_pb_smt::R](R) reader structure"]
-impl crate::Readable for R32_PB_SMT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r32_pb_smt::W](W) writer structure"]
-impl crate::Writable for R32_PB_SMT_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r32_pb_smt::R`](R) reader structure"]
+impl crate::Readable for R32PbSmtSpec {}
+#[doc = "`write(|w| ..)` method takes [`r32_pb_smt::W`](W) writer structure"]
+impl crate::Writable for R32PbSmtSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R32_PB_SMT to value 0"]
-impl crate::Resettable for R32_PB_SMT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R32PbSmtSpec {}

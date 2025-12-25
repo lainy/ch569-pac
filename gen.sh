@@ -1,6 +1,6 @@
 #!/bin/sh
 
 rm -rf src
-svd2rust --target riscv < svd/CH56Xxx.svd
+svd2rust --target riscv --settings config.yml < svd/CH56Xxx.svd
 form -i lib.rs -o src/ && rm lib.rs
 cargo fmt

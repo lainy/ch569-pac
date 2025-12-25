@@ -1,81 +1,35 @@
 #[doc = "Register `R16_UART3_DL` reader"]
-pub struct R(crate::R<R16_UART3_DL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R16_UART3_DL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R16_UART3_DL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R16_UART3_DL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R16Uart3DlSpec>;
 #[doc = "Register `R16_UART3_DL` writer"]
-pub struct W(crate::W<R16_UART3_DL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R16_UART3_DL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R16_UART3_DL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R16_UART3_DL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R16Uart3DlSpec>;
 #[doc = "Field `R16_UART3_DL` reader - UART divisor latch"]
-pub type R16_UART3_DL_R = crate::FieldReader<u16, u16>;
+pub type R16Uart3DlR = crate::FieldReader<u16>;
 #[doc = "Field `R16_UART3_DL` writer - UART divisor latch"]
-pub type R16_UART3_DL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u16, R16_UART3_DL_SPEC, u16, u16, 16, O>;
+pub type R16Uart3DlW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - UART divisor latch"]
     #[inline(always)]
-    pub fn r16_uart3_dl(&self) -> R16_UART3_DL_R {
-        R16_UART3_DL_R::new(self.bits)
+    pub fn r16_uart3_dl(&self) -> R16Uart3DlR {
+        R16Uart3DlR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - UART divisor latch"]
     #[inline(always)]
-    pub fn r16_uart3_dl(&mut self) -> R16_UART3_DL_W<0> {
-        R16_UART3_DL_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn r16_uart3_dl(&mut self) -> R16Uart3DlW<'_, R16Uart3DlSpec> {
+        R16Uart3DlW::new(self, 0)
     }
 }
-#[doc = "UART3 divisor latch\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r16_uart3_dl](index.html) module"]
-pub struct R16_UART3_DL_SPEC;
-impl crate::RegisterSpec for R16_UART3_DL_SPEC {
+#[doc = "UART3 divisor latch\n\nYou can [`read`](crate::Reg::read) this register and get [`r16_uart3_dl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r16_uart3_dl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R16Uart3DlSpec;
+impl crate::RegisterSpec for R16Uart3DlSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [r16_uart3_dl::R](R) reader structure"]
-impl crate::Readable for R16_UART3_DL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r16_uart3_dl::W](W) writer structure"]
-impl crate::Writable for R16_UART3_DL_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r16_uart3_dl::R`](R) reader structure"]
+impl crate::Readable for R16Uart3DlSpec {}
+#[doc = "`write(|w| ..)` method takes [`r16_uart3_dl::W`](W) writer structure"]
+impl crate::Writable for R16Uart3DlSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R16_UART3_DL to value 0"]
-impl crate::Resettable for R16_UART3_DL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R16Uart3DlSpec {}

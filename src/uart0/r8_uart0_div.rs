@@ -1,81 +1,35 @@
 #[doc = "Register `R8_UART0_DIV` reader"]
-pub struct R(crate::R<R8_UART0_DIV_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R8_UART0_DIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R8_UART0_DIV_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R8_UART0_DIV_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R8Uart0DivSpec>;
 #[doc = "Register `R8_UART0_DIV` writer"]
-pub struct W(crate::W<R8_UART0_DIV_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R8_UART0_DIV_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R8_UART0_DIV_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R8_UART0_DIV_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R8Uart0DivSpec>;
 #[doc = "Field `R8_UART0_ADR` reader - UART pre-divisor latch byte"]
-pub type R8_UART0_ADR_R = crate::FieldReader<u8, u8>;
+pub type R8Uart0AdrR = crate::FieldReader;
 #[doc = "Field `R8_UART0_ADR` writer - UART pre-divisor latch byte"]
-pub type R8_UART0_ADR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u8, R8_UART0_DIV_SPEC, u8, u8, 8, O>;
+pub type R8Uart0AdrW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - UART pre-divisor latch byte"]
     #[inline(always)]
-    pub fn r8_uart0_adr(&self) -> R8_UART0_ADR_R {
-        R8_UART0_ADR_R::new(self.bits)
+    pub fn r8_uart0_adr(&self) -> R8Uart0AdrR {
+        R8Uart0AdrR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - UART pre-divisor latch byte"]
     #[inline(always)]
-    pub fn r8_uart0_adr(&mut self) -> R8_UART0_ADR_W<0> {
-        R8_UART0_ADR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn r8_uart0_adr(&mut self) -> R8Uart0AdrW<'_, R8Uart0DivSpec> {
+        R8Uart0AdrW::new(self, 0)
     }
 }
-#[doc = "UART0 pre-divisor latch byte\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r8_uart0_div](index.html) module"]
-pub struct R8_UART0_DIV_SPEC;
-impl crate::RegisterSpec for R8_UART0_DIV_SPEC {
+#[doc = "UART0 pre-divisor latch byte\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_uart0_div::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_uart0_div::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R8Uart0DivSpec;
+impl crate::RegisterSpec for R8Uart0DivSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [r8_uart0_div::R](R) reader structure"]
-impl crate::Readable for R8_UART0_DIV_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r8_uart0_div::W](W) writer structure"]
-impl crate::Writable for R8_UART0_DIV_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r8_uart0_div::R`](R) reader structure"]
+impl crate::Readable for R8Uart0DivSpec {}
+#[doc = "`write(|w| ..)` method takes [`r8_uart0_div::W`](W) writer structure"]
+impl crate::Writable for R8Uart0DivSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R8_UART0_DIV to value 0"]
-impl crate::Resettable for R8_UART0_DIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R8Uart0DivSpec {}

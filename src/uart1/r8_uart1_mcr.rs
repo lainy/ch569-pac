@@ -1,80 +1,49 @@
 #[doc = "Register `R8_UART1_MCR` reader"]
-pub struct R(crate::R<R8_UART1_MCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R8_UART1_MCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R8_UART1_MCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R8_UART1_MCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R8Uart1McrSpec>;
 #[doc = "Register `R8_UART1_MCR` writer"]
-pub struct W(crate::W<R8_UART1_MCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R8_UART1_MCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R8_UART1_MCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R8_UART1_MCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R8Uart1McrSpec>;
 #[doc = "Field `RB_MCR_OUT2` reader - UART1 control OUT2"]
-pub type RB_MCR_OUT2_R = crate::BitReader<bool>;
+pub type RbMcrOut2R = crate::BitReader;
 #[doc = "Field `RB_MCR_OUT2` writer - UART1 control OUT2"]
-pub type RB_MCR_OUT2_W<'a, const O: u8> = crate::BitWriter<'a, u8, R8_UART1_MCR_SPEC, bool, O>;
+pub type RbMcrOut2W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_MCR_AU_FLOW_EN` reader - UART0 enable autoflow control"]
+pub type RbMcrAuFlowEnR = crate::BitReader;
+#[doc = "Field `RB_MCR_AU_FLOW_EN` writer - UART0 enable autoflow control"]
+pub type RbMcrAuFlowEnW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 3 - UART1 control OUT2"]
     #[inline(always)]
-    pub fn rb_mcr_out2(&self) -> RB_MCR_OUT2_R {
-        RB_MCR_OUT2_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn rb_mcr_out2(&self) -> RbMcrOut2R {
+        RbMcrOut2R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 5 - UART0 enable autoflow control"]
+    #[inline(always)]
+    pub fn rb_mcr_au_flow_en(&self) -> RbMcrAuFlowEnR {
+        RbMcrAuFlowEnR::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 3 - UART1 control OUT2"]
     #[inline(always)]
-    pub fn rb_mcr_out2(&mut self) -> RB_MCR_OUT2_W<3> {
-        RB_MCR_OUT2_W::new(self)
+    pub fn rb_mcr_out2(&mut self) -> RbMcrOut2W<'_, R8Uart1McrSpec> {
+        RbMcrOut2W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = "Bit 5 - UART0 enable autoflow control"]
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rb_mcr_au_flow_en(&mut self) -> RbMcrAuFlowEnW<'_, R8Uart1McrSpec> {
+        RbMcrAuFlowEnW::new(self, 5)
     }
 }
-#[doc = "UART1 modem control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r8_uart1_mcr](index.html) module"]
-pub struct R8_UART1_MCR_SPEC;
-impl crate::RegisterSpec for R8_UART1_MCR_SPEC {
+#[doc = "UART1 modem control\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_uart1_mcr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_uart1_mcr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R8Uart1McrSpec;
+impl crate::RegisterSpec for R8Uart1McrSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [r8_uart1_mcr::R](R) reader structure"]
-impl crate::Readable for R8_UART1_MCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r8_uart1_mcr::W](W) writer structure"]
-impl crate::Writable for R8_UART1_MCR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r8_uart1_mcr::R`](R) reader structure"]
+impl crate::Readable for R8Uart1McrSpec {}
+#[doc = "`write(|w| ..)` method takes [`r8_uart1_mcr::W`](W) writer structure"]
+impl crate::Writable for R8Uart1McrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R8_UART1_MCR to value 0"]
-impl crate::Resettable for R8_UART1_MCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R8Uart1McrSpec {}

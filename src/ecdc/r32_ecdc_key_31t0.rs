@@ -1,81 +1,35 @@
 #[doc = "Register `R32_ECDC_KEY_31T0` reader"]
-pub struct R(crate::R<R32_ECDC_KEY_31T0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R32_ECDC_KEY_31T0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R32_ECDC_KEY_31T0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R32_ECDC_KEY_31T0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R32EcdcKey31t0Spec>;
 #[doc = "Register `R32_ECDC_KEY_31T0` writer"]
-pub struct W(crate::W<R32_ECDC_KEY_31T0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R32_ECDC_KEY_31T0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R32_ECDC_KEY_31T0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R32_ECDC_KEY_31T0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R32EcdcKey31t0Spec>;
 #[doc = "Field `RB_ECDC_KEY_31T0` reader - User key 0-31 register"]
-pub type RB_ECDC_KEY_31T0_R = crate::FieldReader<u32, u32>;
+pub type RbEcdcKey31t0R = crate::FieldReader<u32>;
 #[doc = "Field `RB_ECDC_KEY_31T0` writer - User key 0-31 register"]
-pub type RB_ECDC_KEY_31T0_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, R32_ECDC_KEY_31T0_SPEC, u32, u32, 32, O>;
+pub type RbEcdcKey31t0W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - User key 0-31 register"]
     #[inline(always)]
-    pub fn rb_ecdc_key_31t0(&self) -> RB_ECDC_KEY_31T0_R {
-        RB_ECDC_KEY_31T0_R::new(self.bits)
+    pub fn rb_ecdc_key_31t0(&self) -> RbEcdcKey31t0R {
+        RbEcdcKey31t0R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - User key 0-31 register"]
     #[inline(always)]
-    pub fn rb_ecdc_key_31t0(&mut self) -> RB_ECDC_KEY_31T0_W<0> {
-        RB_ECDC_KEY_31T0_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rb_ecdc_key_31t0(&mut self) -> RbEcdcKey31t0W<'_, R32EcdcKey31t0Spec> {
+        RbEcdcKey31t0W::new(self, 0)
     }
 }
-#[doc = "User key 0-31 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r32_ecdc_key_31t0](index.html) module"]
-pub struct R32_ECDC_KEY_31T0_SPEC;
-impl crate::RegisterSpec for R32_ECDC_KEY_31T0_SPEC {
+#[doc = "User key 0-31 register\n\nYou can [`read`](crate::Reg::read) this register and get [`r32_ecdc_key_31t0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r32_ecdc_key_31t0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R32EcdcKey31t0Spec;
+impl crate::RegisterSpec for R32EcdcKey31t0Spec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [r32_ecdc_key_31t0::R](R) reader structure"]
-impl crate::Readable for R32_ECDC_KEY_31T0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r32_ecdc_key_31t0::W](W) writer structure"]
-impl crate::Writable for R32_ECDC_KEY_31T0_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r32_ecdc_key_31t0::R`](R) reader structure"]
+impl crate::Readable for R32EcdcKey31t0Spec {}
+#[doc = "`write(|w| ..)` method takes [`r32_ecdc_key_31t0::W`](W) writer structure"]
+impl crate::Writable for R32EcdcKey31t0Spec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R32_ECDC_KEY_31T0 to value 0"]
-impl crate::Resettable for R32_ECDC_KEY_31T0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R32EcdcKey31t0Spec {}

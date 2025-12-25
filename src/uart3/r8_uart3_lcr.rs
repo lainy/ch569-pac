@@ -1,153 +1,105 @@
 #[doc = "Register `R8_UART3_LCR` reader"]
-pub struct R(crate::R<R8_UART3_LCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R8_UART3_LCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R8_UART3_LCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R8_UART3_LCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R8Uart3LcrSpec>;
 #[doc = "Register `R8_UART3_LCR` writer"]
-pub struct W(crate::W<R8_UART3_LCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R8_UART3_LCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R8_UART3_LCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R8_UART3_LCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R8Uart3LcrSpec>;
 #[doc = "Field `RB_LCR_WORD_SZ` reader - UART word bit length"]
-pub type RB_LCR_WORD_SZ_R = crate::FieldReader<u8, u8>;
+pub type RbLcrWordSzR = crate::FieldReader;
 #[doc = "Field `RB_LCR_WORD_SZ` writer - UART word bit length"]
-pub type RB_LCR_WORD_SZ_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u8, R8_UART3_LCR_SPEC, u8, u8, 2, O>;
+pub type RbLcrWordSzW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `RB_LCR_STOP_BIT` reader - UART stop bit length"]
-pub type RB_LCR_STOP_BIT_R = crate::BitReader<bool>;
+pub type RbLcrStopBitR = crate::BitReader;
 #[doc = "Field `RB_LCR_STOP_BIT` writer - UART stop bit length"]
-pub type RB_LCR_STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, u8, R8_UART3_LCR_SPEC, bool, O>;
+pub type RbLcrStopBitW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_LCR_PAR_EN` reader - UART parity enable"]
-pub type RB_LCR_PAR_EN_R = crate::BitReader<bool>;
+pub type RbLcrParEnR = crate::BitReader;
 #[doc = "Field `RB_LCR_PAR_EN` writer - UART parity enable"]
-pub type RB_LCR_PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u8, R8_UART3_LCR_SPEC, bool, O>;
+pub type RbLcrParEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_LCR_PAR_MOD` reader - UART parity mode"]
-pub type RB_LCR_PAR_MOD_R = crate::FieldReader<u8, u8>;
+pub type RbLcrParModR = crate::FieldReader;
 #[doc = "Field `RB_LCR_PAR_MOD` writer - UART parity mode"]
-pub type RB_LCR_PAR_MOD_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u8, R8_UART3_LCR_SPEC, u8, u8, 2, O>;
+pub type RbLcrParModW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `RB_LCR_BREAK_EN` reader - UART break control enable"]
-pub type RB_LCR_BREAK_EN_R = crate::BitReader<bool>;
+pub type RbLcrBreakEnR = crate::BitReader;
 #[doc = "Field `RB_LCR_BREAK_EN` writer - UART break control enable"]
-pub type RB_LCR_BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, u8, R8_UART3_LCR_SPEC, bool, O>;
-#[doc = "Field `RB_LCR_DLAB_RB_LCR_GP_BIT` reader - UART reserved bit and UART general purpose bit"]
-pub type RB_LCR_DLAB_RB_LCR_GP_BIT_R = crate::BitReader<bool>;
-#[doc = "Field `RB_LCR_DLAB_RB_LCR_GP_BIT` writer - UART reserved bit and UART general purpose bit"]
-pub type RB_LCR_DLAB_RB_LCR_GP_BIT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u8, R8_UART3_LCR_SPEC, bool, O>;
+pub type RbLcrBreakEnW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_LCR_DLAB_RB_LCR_GP_BIT` reader - UART reserved bit / UART general purpose bit"]
+pub type RbLcrDlabRbLcrGpBitR = crate::BitReader;
+#[doc = "Field `RB_LCR_DLAB_RB_LCR_GP_BIT` writer - UART reserved bit / UART general purpose bit"]
+pub type RbLcrDlabRbLcrGpBitW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - UART word bit length"]
     #[inline(always)]
-    pub fn rb_lcr_word_sz(&self) -> RB_LCR_WORD_SZ_R {
-        RB_LCR_WORD_SZ_R::new((self.bits & 3) as u8)
+    pub fn rb_lcr_word_sz(&self) -> RbLcrWordSzR {
+        RbLcrWordSzR::new(self.bits & 3)
     }
     #[doc = "Bit 2 - UART stop bit length"]
     #[inline(always)]
-    pub fn rb_lcr_stop_bit(&self) -> RB_LCR_STOP_BIT_R {
-        RB_LCR_STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn rb_lcr_stop_bit(&self) -> RbLcrStopBitR {
+        RbLcrStopBitR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - UART parity enable"]
     #[inline(always)]
-    pub fn rb_lcr_par_en(&self) -> RB_LCR_PAR_EN_R {
-        RB_LCR_PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn rb_lcr_par_en(&self) -> RbLcrParEnR {
+        RbLcrParEnR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - UART parity mode"]
     #[inline(always)]
-    pub fn rb_lcr_par_mod(&self) -> RB_LCR_PAR_MOD_R {
-        RB_LCR_PAR_MOD_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn rb_lcr_par_mod(&self) -> RbLcrParModR {
+        RbLcrParModR::new((self.bits >> 4) & 3)
     }
     #[doc = "Bit 6 - UART break control enable"]
     #[inline(always)]
-    pub fn rb_lcr_break_en(&self) -> RB_LCR_BREAK_EN_R {
-        RB_LCR_BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn rb_lcr_break_en(&self) -> RbLcrBreakEnR {
+        RbLcrBreakEnR::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - UART reserved bit and UART general purpose bit"]
+    #[doc = "Bit 7 - UART reserved bit / UART general purpose bit"]
     #[inline(always)]
-    pub fn rb_lcr_dlab_rb_lcr_gp_bit(&self) -> RB_LCR_DLAB_RB_LCR_GP_BIT_R {
-        RB_LCR_DLAB_RB_LCR_GP_BIT_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn rb_lcr_dlab_rb_lcr_gp_bit(&self) -> RbLcrDlabRbLcrGpBitR {
+        RbLcrDlabRbLcrGpBitR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - UART word bit length"]
     #[inline(always)]
-    pub fn rb_lcr_word_sz(&mut self) -> RB_LCR_WORD_SZ_W<0> {
-        RB_LCR_WORD_SZ_W::new(self)
+    pub fn rb_lcr_word_sz(&mut self) -> RbLcrWordSzW<'_, R8Uart3LcrSpec> {
+        RbLcrWordSzW::new(self, 0)
     }
     #[doc = "Bit 2 - UART stop bit length"]
     #[inline(always)]
-    pub fn rb_lcr_stop_bit(&mut self) -> RB_LCR_STOP_BIT_W<2> {
-        RB_LCR_STOP_BIT_W::new(self)
+    pub fn rb_lcr_stop_bit(&mut self) -> RbLcrStopBitW<'_, R8Uart3LcrSpec> {
+        RbLcrStopBitW::new(self, 2)
     }
     #[doc = "Bit 3 - UART parity enable"]
     #[inline(always)]
-    pub fn rb_lcr_par_en(&mut self) -> RB_LCR_PAR_EN_W<3> {
-        RB_LCR_PAR_EN_W::new(self)
+    pub fn rb_lcr_par_en(&mut self) -> RbLcrParEnW<'_, R8Uart3LcrSpec> {
+        RbLcrParEnW::new(self, 3)
     }
     #[doc = "Bits 4:5 - UART parity mode"]
     #[inline(always)]
-    pub fn rb_lcr_par_mod(&mut self) -> RB_LCR_PAR_MOD_W<4> {
-        RB_LCR_PAR_MOD_W::new(self)
+    pub fn rb_lcr_par_mod(&mut self) -> RbLcrParModW<'_, R8Uart3LcrSpec> {
+        RbLcrParModW::new(self, 4)
     }
     #[doc = "Bit 6 - UART break control enable"]
     #[inline(always)]
-    pub fn rb_lcr_break_en(&mut self) -> RB_LCR_BREAK_EN_W<6> {
-        RB_LCR_BREAK_EN_W::new(self)
+    pub fn rb_lcr_break_en(&mut self) -> RbLcrBreakEnW<'_, R8Uart3LcrSpec> {
+        RbLcrBreakEnW::new(self, 6)
     }
-    #[doc = "Bit 7 - UART reserved bit and UART general purpose bit"]
+    #[doc = "Bit 7 - UART reserved bit / UART general purpose bit"]
     #[inline(always)]
-    pub fn rb_lcr_dlab_rb_lcr_gp_bit(&mut self) -> RB_LCR_DLAB_RB_LCR_GP_BIT_W<7> {
-        RB_LCR_DLAB_RB_LCR_GP_BIT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rb_lcr_dlab_rb_lcr_gp_bit(&mut self) -> RbLcrDlabRbLcrGpBitW<'_, R8Uart3LcrSpec> {
+        RbLcrDlabRbLcrGpBitW::new(self, 7)
     }
 }
-#[doc = "UART3 line control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r8_uart3_lcr](index.html) module"]
-pub struct R8_UART3_LCR_SPEC;
-impl crate::RegisterSpec for R8_UART3_LCR_SPEC {
+#[doc = "UART3 line control\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_uart3_lcr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_uart3_lcr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R8Uart3LcrSpec;
+impl crate::RegisterSpec for R8Uart3LcrSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [r8_uart3_lcr::R](R) reader structure"]
-impl crate::Readable for R8_UART3_LCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r8_uart3_lcr::W](W) writer structure"]
-impl crate::Writable for R8_UART3_LCR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r8_uart3_lcr::R`](R) reader structure"]
+impl crate::Readable for R8Uart3LcrSpec {}
+#[doc = "`write(|w| ..)` method takes [`r8_uart3_lcr::W`](W) writer structure"]
+impl crate::Writable for R8Uart3LcrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R8_UART3_LCR to value 0"]
-impl crate::Resettable for R8_UART3_LCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R8Uart3LcrSpec {}

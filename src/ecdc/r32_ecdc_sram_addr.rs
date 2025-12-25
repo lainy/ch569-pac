@@ -1,81 +1,35 @@
 #[doc = "Register `R32_ECDC_SRAM_ADDR` reader"]
-pub struct R(crate::R<R32_ECDC_SRAM_ADDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R32_ECDC_SRAM_ADDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R32_ECDC_SRAM_ADDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R32_ECDC_SRAM_ADDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R32EcdcSramAddrSpec>;
 #[doc = "Register `R32_ECDC_SRAM_ADDR` writer"]
-pub struct W(crate::W<R32_ECDC_SRAM_ADDR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R32_ECDC_SRAM_ADDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R32_ECDC_SRAM_ADDR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R32_ECDC_SRAM_ADDR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R32EcdcSramAddrSpec>;
 #[doc = "Field `RB_ECDC_SRAM_ADDR` reader - encryption and decryption sram start address register"]
-pub type RB_ECDC_SRAM_ADDR_R = crate::FieldReader<u32, u32>;
+pub type RbEcdcSramAddrR = crate::FieldReader<u32>;
 #[doc = "Field `RB_ECDC_SRAM_ADDR` writer - encryption and decryption sram start address register"]
-pub type RB_ECDC_SRAM_ADDR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, R32_ECDC_SRAM_ADDR_SPEC, u32, u32, 17, O>;
+pub type RbEcdcSramAddrW<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 impl R {
     #[doc = "Bits 0:16 - encryption and decryption sram start address register"]
     #[inline(always)]
-    pub fn rb_ecdc_sram_addr(&self) -> RB_ECDC_SRAM_ADDR_R {
-        RB_ECDC_SRAM_ADDR_R::new((self.bits & 0x0001_ffff) as u32)
+    pub fn rb_ecdc_sram_addr(&self) -> RbEcdcSramAddrR {
+        RbEcdcSramAddrR::new(self.bits & 0x0001_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:16 - encryption and decryption sram start address register"]
     #[inline(always)]
-    pub fn rb_ecdc_sram_addr(&mut self) -> RB_ECDC_SRAM_ADDR_W<0> {
-        RB_ECDC_SRAM_ADDR_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rb_ecdc_sram_addr(&mut self) -> RbEcdcSramAddrW<'_, R32EcdcSramAddrSpec> {
+        RbEcdcSramAddrW::new(self, 0)
     }
 }
-#[doc = "encryption and decryption sram start address register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r32_ecdc_sram_addr](index.html) module"]
-pub struct R32_ECDC_SRAM_ADDR_SPEC;
-impl crate::RegisterSpec for R32_ECDC_SRAM_ADDR_SPEC {
+#[doc = "encryption and decryption sram start address register\n\nYou can [`read`](crate::Reg::read) this register and get [`r32_ecdc_sram_addr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r32_ecdc_sram_addr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R32EcdcSramAddrSpec;
+impl crate::RegisterSpec for R32EcdcSramAddrSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [r32_ecdc_sram_addr::R](R) reader structure"]
-impl crate::Readable for R32_ECDC_SRAM_ADDR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r32_ecdc_sram_addr::W](W) writer structure"]
-impl crate::Writable for R32_ECDC_SRAM_ADDR_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r32_ecdc_sram_addr::R`](R) reader structure"]
+impl crate::Readable for R32EcdcSramAddrSpec {}
+#[doc = "`write(|w| ..)` method takes [`r32_ecdc_sram_addr::W`](W) writer structure"]
+impl crate::Writable for R32EcdcSramAddrSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R32_ECDC_SRAM_ADDR to value 0"]
-impl crate::Resettable for R32_ECDC_SRAM_ADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R32EcdcSramAddrSpec {}

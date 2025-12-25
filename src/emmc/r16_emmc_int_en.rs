@@ -1,216 +1,161 @@
 #[doc = "Register `R16_EMMC_INT_EN` reader"]
-pub struct R(crate::R<R16_EMMC_INT_EN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R16_EMMC_INT_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R16_EMMC_INT_EN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R16_EMMC_INT_EN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R16EmmcIntEnSpec>;
 #[doc = "Register `R16_EMMC_INT_EN` writer"]
-pub struct W(crate::W<R16_EMMC_INT_EN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R16_EMMC_INT_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R16_EMMC_INT_EN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R16_EMMC_INT_EN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R16EmmcIntEnSpec>;
 #[doc = "Field `RB_EMMC_IE_RE_TMOUT` reader - command response timeout interrupt enable"]
-pub type RB_EMMC_IE_RE_TMOUT_R = crate::BitReader<bool>;
+pub type RbEmmcIeReTmoutR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_RE_TMOUT` writer - command response timeout interrupt enable"]
-pub type RB_EMMC_IE_RE_TMOUT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeReTmoutW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_RECRC_WR` reader - response CRC check error interrupt enable"]
-pub type RB_EMMC_IE_RECRC_WR_R = crate::BitReader<bool>;
+pub type RbEmmcIeRecrcWrR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_RECRC_WR` writer - response CRC check error interrupt enable"]
-pub type RB_EMMC_IE_RECRC_WR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeRecrcWrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_REIDX_ER` reader - response index check error interrupt enable"]
-pub type RB_EMMC_IE_REIDX_ER_R = crate::BitReader<bool>;
+pub type RbEmmcIeReidxErR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_REIDX_ER` writer - response index check error interrupt enable"]
-pub type RB_EMMC_IE_REIDX_ER_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeReidxErW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_CMDDONE` reader - command completion interrupt enable"]
-pub type RB_EMMC_IE_CMDDONE_R = crate::BitReader<bool>;
+pub type RbEmmcIeCmddoneR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_CMDDONE` writer - command completion interrupt enable"]
-pub type RB_EMMC_IE_CMDDONE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeCmddoneW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_DATTMO` reader - data timeout interrupt enable"]
-pub type RB_EMMC_IE_DATTMO_R = crate::BitReader<bool>;
+pub type RbEmmcIeDattmoR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_DATTMO` writer - data timeout interrupt enable"]
-pub type RB_EMMC_IE_DATTMO_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeDattmoW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_TRANERR` reader - blocks transfer CRC error interrupt enable"]
-pub type RB_EMMC_IE_TRANERR_R = crate::BitReader<bool>;
+pub type RbEmmcIeTranerrR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_TRANERR` writer - blocks transfer CRC error interrupt enable"]
-pub type RB_EMMC_IE_TRANERR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeTranerrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_TRANDONE` reader - all blocks transfer complete interrupt enable"]
-pub type RB_EMMC_IE_TRANDONE_R = crate::BitReader<bool>;
+pub type RbEmmcIeTrandoneR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_TRANDONE` writer - all blocks transfer complete interrupt enable"]
-pub type RB_EMMC_IE_TRANDONE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeTrandoneW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_BKGAP` reader - single block transmission completion interrupt enable"]
-pub type RB_EMMC_IE_BKGAP_R = crate::BitReader<bool>;
+pub type RbEmmcIeBkgapR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_BKGAP` writer - single block transmission completion interrupt enable"]
-pub type RB_EMMC_IE_BKGAP_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeBkgapW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_FIFO_OV` reader - FIFO overflow interrupt enable"]
-pub type RB_EMMC_IE_FIFO_OV_R = crate::BitReader<bool>;
+pub type RbEmmcIeFifoOvR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_FIFO_OV` writer - FIFO overflow interrupt enable"]
-pub type RB_EMMC_IE_FIFO_OV_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeFifoOvW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_EMMC_IE_SDIOINT` reader - SDIO card interrupt enable"]
-pub type RB_EMMC_IE_SDIOINT_R = crate::BitReader<bool>;
+pub type RbEmmcIeSdiointR = crate::BitReader;
 #[doc = "Field `RB_EMMC_IE_SDIOINT` writer - SDIO card interrupt enable"]
-pub type RB_EMMC_IE_SDIOINT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u16, R16_EMMC_INT_EN_SPEC, bool, O>;
+pub type RbEmmcIeSdiointW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - command response timeout interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_re_tmout(&self) -> RB_EMMC_IE_RE_TMOUT_R {
-        RB_EMMC_IE_RE_TMOUT_R::new((self.bits & 1) != 0)
+    pub fn rb_emmc_ie_re_tmout(&self) -> RbEmmcIeReTmoutR {
+        RbEmmcIeReTmoutR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - response CRC check error interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_recrc_wr(&self) -> RB_EMMC_IE_RECRC_WR_R {
-        RB_EMMC_IE_RECRC_WR_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn rb_emmc_ie_recrc_wr(&self) -> RbEmmcIeRecrcWrR {
+        RbEmmcIeRecrcWrR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - response index check error interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_reidx_er(&self) -> RB_EMMC_IE_REIDX_ER_R {
-        RB_EMMC_IE_REIDX_ER_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn rb_emmc_ie_reidx_er(&self) -> RbEmmcIeReidxErR {
+        RbEmmcIeReidxErR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - command completion interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_cmddone(&self) -> RB_EMMC_IE_CMDDONE_R {
-        RB_EMMC_IE_CMDDONE_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn rb_emmc_ie_cmddone(&self) -> RbEmmcIeCmddoneR {
+        RbEmmcIeCmddoneR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - data timeout interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_dattmo(&self) -> RB_EMMC_IE_DATTMO_R {
-        RB_EMMC_IE_DATTMO_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn rb_emmc_ie_dattmo(&self) -> RbEmmcIeDattmoR {
+        RbEmmcIeDattmoR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - blocks transfer CRC error interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_tranerr(&self) -> RB_EMMC_IE_TRANERR_R {
-        RB_EMMC_IE_TRANERR_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn rb_emmc_ie_tranerr(&self) -> RbEmmcIeTranerrR {
+        RbEmmcIeTranerrR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - all blocks transfer complete interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_trandone(&self) -> RB_EMMC_IE_TRANDONE_R {
-        RB_EMMC_IE_TRANDONE_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn rb_emmc_ie_trandone(&self) -> RbEmmcIeTrandoneR {
+        RbEmmcIeTrandoneR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - single block transmission completion interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_bkgap(&self) -> RB_EMMC_IE_BKGAP_R {
-        RB_EMMC_IE_BKGAP_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn rb_emmc_ie_bkgap(&self) -> RbEmmcIeBkgapR {
+        RbEmmcIeBkgapR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - FIFO overflow interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_fifo_ov(&self) -> RB_EMMC_IE_FIFO_OV_R {
-        RB_EMMC_IE_FIFO_OV_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn rb_emmc_ie_fifo_ov(&self) -> RbEmmcIeFifoOvR {
+        RbEmmcIeFifoOvR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - SDIO card interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_sdioint(&self) -> RB_EMMC_IE_SDIOINT_R {
-        RB_EMMC_IE_SDIOINT_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn rb_emmc_ie_sdioint(&self) -> RbEmmcIeSdiointR {
+        RbEmmcIeSdiointR::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - command response timeout interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_re_tmout(&mut self) -> RB_EMMC_IE_RE_TMOUT_W<0> {
-        RB_EMMC_IE_RE_TMOUT_W::new(self)
+    pub fn rb_emmc_ie_re_tmout(&mut self) -> RbEmmcIeReTmoutW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeReTmoutW::new(self, 0)
     }
     #[doc = "Bit 1 - response CRC check error interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_recrc_wr(&mut self) -> RB_EMMC_IE_RECRC_WR_W<1> {
-        RB_EMMC_IE_RECRC_WR_W::new(self)
+    pub fn rb_emmc_ie_recrc_wr(&mut self) -> RbEmmcIeRecrcWrW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeRecrcWrW::new(self, 1)
     }
     #[doc = "Bit 2 - response index check error interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_reidx_er(&mut self) -> RB_EMMC_IE_REIDX_ER_W<2> {
-        RB_EMMC_IE_REIDX_ER_W::new(self)
+    pub fn rb_emmc_ie_reidx_er(&mut self) -> RbEmmcIeReidxErW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeReidxErW::new(self, 2)
     }
     #[doc = "Bit 3 - command completion interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_cmddone(&mut self) -> RB_EMMC_IE_CMDDONE_W<3> {
-        RB_EMMC_IE_CMDDONE_W::new(self)
+    pub fn rb_emmc_ie_cmddone(&mut self) -> RbEmmcIeCmddoneW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeCmddoneW::new(self, 3)
     }
     #[doc = "Bit 4 - data timeout interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_dattmo(&mut self) -> RB_EMMC_IE_DATTMO_W<4> {
-        RB_EMMC_IE_DATTMO_W::new(self)
+    pub fn rb_emmc_ie_dattmo(&mut self) -> RbEmmcIeDattmoW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeDattmoW::new(self, 4)
     }
     #[doc = "Bit 5 - blocks transfer CRC error interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_tranerr(&mut self) -> RB_EMMC_IE_TRANERR_W<5> {
-        RB_EMMC_IE_TRANERR_W::new(self)
+    pub fn rb_emmc_ie_tranerr(&mut self) -> RbEmmcIeTranerrW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeTranerrW::new(self, 5)
     }
     #[doc = "Bit 6 - all blocks transfer complete interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_trandone(&mut self) -> RB_EMMC_IE_TRANDONE_W<6> {
-        RB_EMMC_IE_TRANDONE_W::new(self)
+    pub fn rb_emmc_ie_trandone(&mut self) -> RbEmmcIeTrandoneW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeTrandoneW::new(self, 6)
     }
     #[doc = "Bit 7 - single block transmission completion interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_bkgap(&mut self) -> RB_EMMC_IE_BKGAP_W<7> {
-        RB_EMMC_IE_BKGAP_W::new(self)
+    pub fn rb_emmc_ie_bkgap(&mut self) -> RbEmmcIeBkgapW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeBkgapW::new(self, 7)
     }
     #[doc = "Bit 8 - FIFO overflow interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_fifo_ov(&mut self) -> RB_EMMC_IE_FIFO_OV_W<8> {
-        RB_EMMC_IE_FIFO_OV_W::new(self)
+    pub fn rb_emmc_ie_fifo_ov(&mut self) -> RbEmmcIeFifoOvW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeFifoOvW::new(self, 8)
     }
     #[doc = "Bit 9 - SDIO card interrupt enable"]
     #[inline(always)]
-    pub fn rb_emmc_ie_sdioint(&mut self) -> RB_EMMC_IE_SDIOINT_W<9> {
-        RB_EMMC_IE_SDIOINT_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rb_emmc_ie_sdioint(&mut self) -> RbEmmcIeSdiointW<'_, R16EmmcIntEnSpec> {
+        RbEmmcIeSdiointW::new(self, 9)
     }
 }
-#[doc = "SD 16bits interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r16_emmc_int_en](index.html) module"]
-pub struct R16_EMMC_INT_EN_SPEC;
-impl crate::RegisterSpec for R16_EMMC_INT_EN_SPEC {
+#[doc = "SD 16bits interrupt enable register\n\nYou can [`read`](crate::Reg::read) this register and get [`r16_emmc_int_en::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r16_emmc_int_en::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R16EmmcIntEnSpec;
+impl crate::RegisterSpec for R16EmmcIntEnSpec {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [r16_emmc_int_en::R](R) reader structure"]
-impl crate::Readable for R16_EMMC_INT_EN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r16_emmc_int_en::W](W) writer structure"]
-impl crate::Writable for R16_EMMC_INT_EN_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r16_emmc_int_en::R`](R) reader structure"]
+impl crate::Readable for R16EmmcIntEnSpec {}
+#[doc = "`write(|w| ..)` method takes [`r16_emmc_int_en::W`](W) writer structure"]
+impl crate::Writable for R16EmmcIntEnSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R16_EMMC_INT_EN to value 0"]
-impl crate::Resettable for R16_EMMC_INT_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R16EmmcIntEnSpec {}

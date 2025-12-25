@@ -1,81 +1,35 @@
 #[doc = "Register `R32_PB_PU` reader"]
-pub struct R(crate::R<R32_PB_PU_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R32_PB_PU_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R32_PB_PU_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R32_PB_PU_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R32PbPuSpec>;
 #[doc = "Register `R32_PB_PU` writer"]
-pub struct W(crate::W<R32_PB_PU_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R32_PB_PU_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R32_PB_PU_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R32_PB_PU_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R32PbPuSpec>;
 #[doc = "Field `R32_PB_PU` reader - GPIO PB pullup resistance enable"]
-pub type R32_PB_PU_R = crate::FieldReader<u32, u32>;
+pub type R32PbPuR = crate::FieldReader<u32>;
 #[doc = "Field `R32_PB_PU` writer - GPIO PB pullup resistance enable"]
-pub type R32_PB_PU_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, R32_PB_PU_SPEC, u32, u32, 25, O>;
+pub type R32PbPuW<'a, REG> = crate::FieldWriter<'a, REG, 25, u32>;
 impl R {
     #[doc = "Bits 0:24 - GPIO PB pullup resistance enable"]
     #[inline(always)]
-    pub fn r32_pb_pu(&self) -> R32_PB_PU_R {
-        R32_PB_PU_R::new((self.bits & 0x01ff_ffff) as u32)
+    pub fn r32_pb_pu(&self) -> R32PbPuR {
+        R32PbPuR::new(self.bits & 0x01ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:24 - GPIO PB pullup resistance enable"]
     #[inline(always)]
-    pub fn r32_pb_pu(&mut self) -> R32_PB_PU_W<0> {
-        R32_PB_PU_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn r32_pb_pu(&mut self) -> R32PbPuW<'_, R32PbPuSpec> {
+        R32PbPuW::new(self, 0)
     }
 }
-#[doc = "GPIO PB pullup resistance enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r32_pb_pu](index.html) module"]
-pub struct R32_PB_PU_SPEC;
-impl crate::RegisterSpec for R32_PB_PU_SPEC {
+#[doc = "GPIO PB pullup resistance enable\n\nYou can [`read`](crate::Reg::read) this register and get [`r32_pb_pu::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r32_pb_pu::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R32PbPuSpec;
+impl crate::RegisterSpec for R32PbPuSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [r32_pb_pu::R](R) reader structure"]
-impl crate::Readable for R32_PB_PU_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r32_pb_pu::W](W) writer structure"]
-impl crate::Writable for R32_PB_PU_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r32_pb_pu::R`](R) reader structure"]
+impl crate::Readable for R32PbPuSpec {}
+#[doc = "`write(|w| ..)` method takes [`r32_pb_pu::W`](W) writer structure"]
+impl crate::Writable for R32PbPuSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R32_PB_PU to value 0"]
-impl crate::Resettable for R32_PB_PU_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R32PbPuSpec {}

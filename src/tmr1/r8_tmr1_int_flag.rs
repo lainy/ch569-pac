@@ -1,141 +1,91 @@
 #[doc = "Register `R8_TMR1_INT_FLAG` reader"]
-pub struct R(crate::R<R8_TMR1_INT_FLAG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<R8_TMR1_INT_FLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<R8_TMR1_INT_FLAG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<R8_TMR1_INT_FLAG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<R8Tmr1IntFlagSpec>;
 #[doc = "Register `R8_TMR1_INT_FLAG` writer"]
-pub struct W(crate::W<R8_TMR1_INT_FLAG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<R8_TMR1_INT_FLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<R8_TMR1_INT_FLAG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<R8_TMR1_INT_FLAG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<R8Tmr1IntFlagSpec>;
 #[doc = "Field `RB_TMR_IF_CYC_END` reader - interrupt flag for timer capture count timeout or PWM cycle end"]
-pub type RB_TMR_IF_CYC_END_R = crate::BitReader<bool>;
+pub type RbTmrIfCycEndR = crate::BitReader;
 #[doc = "Field `RB_TMR_IF_CYC_END` writer - interrupt flag for timer capture count timeout or PWM cycle end"]
-pub type RB_TMR_IF_CYC_END_W<'a, const O: u8> =
-    crate::BitWriter<'a, u8, R8_TMR1_INT_FLAG_SPEC, bool, O>;
+pub type RbTmrIfCycEndW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_TMR_IF_DATA_ACT` reader - interrupt flag for timer capture input action or PWM trigger"]
-pub type RB_TMR_IF_DATA_ACT_R = crate::BitReader<bool>;
+pub type RbTmrIfDataActR = crate::BitReader;
 #[doc = "Field `RB_TMR_IF_DATA_ACT` writer - interrupt flag for timer capture input action or PWM trigger"]
-pub type RB_TMR_IF_DATA_ACT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u8, R8_TMR1_INT_FLAG_SPEC, bool, O>;
+pub type RbTmrIfDataActW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_TMR_IF_FIFO_HF` reader - interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo lower than 3)"]
-pub type RB_TMR_IF_FIFO_HF_R = crate::BitReader<bool>;
+pub type RbTmrIfFifoHfR = crate::BitReader;
 #[doc = "Field `RB_TMR_IF_FIFO_HF` writer - interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo lower than 3)"]
-pub type RB_TMR_IF_FIFO_HF_W<'a, const O: u8> =
-    crate::BitWriter<'a, u8, R8_TMR1_INT_FLAG_SPEC, bool, O>;
-#[doc = "Field `RB_TMR_IF_DMA_END` reader - interrupt flag for timer1_2 DMA completion"]
-pub type RB_TMR_IF_DMA_END_R = crate::BitReader<bool>;
-#[doc = "Field `RB_TMR_IF_DMA_END` writer - interrupt flag for timer1_2 DMA completion"]
-pub type RB_TMR_IF_DMA_END_W<'a, const O: u8> =
-    crate::BitWriter<'a, u8, R8_TMR1_INT_FLAG_SPEC, bool, O>;
+pub type RbTmrIfFifoHfW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `RB_TMR_IF_DMA_END` reader - interrupt flag for timer1/2 DMA completion"]
+pub type RbTmrIfDmaEndR = crate::BitReader;
+#[doc = "Field `RB_TMR_IF_DMA_END` writer - interrupt flag for timer1/2 DMA completion"]
+pub type RbTmrIfDmaEndW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RB_TMR_IF_FIFO_OV` reader - interrupt flag for timer FIFO overflow"]
-pub type RB_TMR_IF_FIFO_OV_R = crate::BitReader<bool>;
+pub type RbTmrIfFifoOvR = crate::BitReader;
 #[doc = "Field `RB_TMR_IF_FIFO_OV` writer - interrupt flag for timer FIFO overflow"]
-pub type RB_TMR_IF_FIFO_OV_W<'a, const O: u8> =
-    crate::BitWriter<'a, u8, R8_TMR1_INT_FLAG_SPEC, bool, O>;
+pub type RbTmrIfFifoOvW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - interrupt flag for timer capture count timeout or PWM cycle end"]
     #[inline(always)]
-    pub fn rb_tmr_if_cyc_end(&self) -> RB_TMR_IF_CYC_END_R {
-        RB_TMR_IF_CYC_END_R::new((self.bits & 1) != 0)
+    pub fn rb_tmr_if_cyc_end(&self) -> RbTmrIfCycEndR {
+        RbTmrIfCycEndR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - interrupt flag for timer capture input action or PWM trigger"]
     #[inline(always)]
-    pub fn rb_tmr_if_data_act(&self) -> RB_TMR_IF_DATA_ACT_R {
-        RB_TMR_IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn rb_tmr_if_data_act(&self) -> RbTmrIfDataActR {
+        RbTmrIfDataActR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo lower than 3)"]
     #[inline(always)]
-    pub fn rb_tmr_if_fifo_hf(&self) -> RB_TMR_IF_FIFO_HF_R {
-        RB_TMR_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn rb_tmr_if_fifo_hf(&self) -> RbTmrIfFifoHfR {
+        RbTmrIfFifoHfR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - interrupt flag for timer1_2 DMA completion"]
+    #[doc = "Bit 3 - interrupt flag for timer1/2 DMA completion"]
     #[inline(always)]
-    pub fn rb_tmr_if_dma_end(&self) -> RB_TMR_IF_DMA_END_R {
-        RB_TMR_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn rb_tmr_if_dma_end(&self) -> RbTmrIfDmaEndR {
+        RbTmrIfDmaEndR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - interrupt flag for timer FIFO overflow"]
     #[inline(always)]
-    pub fn rb_tmr_if_fifo_ov(&self) -> RB_TMR_IF_FIFO_OV_R {
-        RB_TMR_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn rb_tmr_if_fifo_ov(&self) -> RbTmrIfFifoOvR {
+        RbTmrIfFifoOvR::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - interrupt flag for timer capture count timeout or PWM cycle end"]
     #[inline(always)]
-    pub fn rb_tmr_if_cyc_end(&mut self) -> RB_TMR_IF_CYC_END_W<0> {
-        RB_TMR_IF_CYC_END_W::new(self)
+    pub fn rb_tmr_if_cyc_end(&mut self) -> RbTmrIfCycEndW<'_, R8Tmr1IntFlagSpec> {
+        RbTmrIfCycEndW::new(self, 0)
     }
     #[doc = "Bit 1 - interrupt flag for timer capture input action or PWM trigger"]
     #[inline(always)]
-    pub fn rb_tmr_if_data_act(&mut self) -> RB_TMR_IF_DATA_ACT_W<1> {
-        RB_TMR_IF_DATA_ACT_W::new(self)
+    pub fn rb_tmr_if_data_act(&mut self) -> RbTmrIfDataActW<'_, R8Tmr1IntFlagSpec> {
+        RbTmrIfDataActW::new(self, 1)
     }
     #[doc = "Bit 2 - interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo lower than 3)"]
     #[inline(always)]
-    pub fn rb_tmr_if_fifo_hf(&mut self) -> RB_TMR_IF_FIFO_HF_W<2> {
-        RB_TMR_IF_FIFO_HF_W::new(self)
+    pub fn rb_tmr_if_fifo_hf(&mut self) -> RbTmrIfFifoHfW<'_, R8Tmr1IntFlagSpec> {
+        RbTmrIfFifoHfW::new(self, 2)
     }
-    #[doc = "Bit 3 - interrupt flag for timer1_2 DMA completion"]
+    #[doc = "Bit 3 - interrupt flag for timer1/2 DMA completion"]
     #[inline(always)]
-    pub fn rb_tmr_if_dma_end(&mut self) -> RB_TMR_IF_DMA_END_W<3> {
-        RB_TMR_IF_DMA_END_W::new(self)
+    pub fn rb_tmr_if_dma_end(&mut self) -> RbTmrIfDmaEndW<'_, R8Tmr1IntFlagSpec> {
+        RbTmrIfDmaEndW::new(self, 3)
     }
     #[doc = "Bit 4 - interrupt flag for timer FIFO overflow"]
     #[inline(always)]
-    pub fn rb_tmr_if_fifo_ov(&mut self) -> RB_TMR_IF_FIFO_OV_W<4> {
-        RB_TMR_IF_FIFO_OV_W::new(self)
-    }
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
-        self
+    pub fn rb_tmr_if_fifo_ov(&mut self) -> RbTmrIfFifoOvW<'_, R8Tmr1IntFlagSpec> {
+        RbTmrIfFifoOvW::new(self, 4)
     }
 }
-#[doc = "TMR1 interrupt flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [r8_tmr1_int_flag](index.html) module"]
-pub struct R8_TMR1_INT_FLAG_SPEC;
-impl crate::RegisterSpec for R8_TMR1_INT_FLAG_SPEC {
+#[doc = "TMR1 interrupt flag\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_tmr1_int_flag::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_tmr1_int_flag::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct R8Tmr1IntFlagSpec;
+impl crate::RegisterSpec for R8Tmr1IntFlagSpec {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [r8_tmr1_int_flag::R](R) reader structure"]
-impl crate::Readable for R8_TMR1_INT_FLAG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [r8_tmr1_int_flag::W](W) writer structure"]
-impl crate::Writable for R8_TMR1_INT_FLAG_SPEC {
-    type Writer = W;
+#[doc = "`read()` method returns [`r8_tmr1_int_flag::R`](R) reader structure"]
+impl crate::Readable for R8Tmr1IntFlagSpec {}
+#[doc = "`write(|w| ..)` method takes [`r8_tmr1_int_flag::W`](W) writer structure"]
+impl crate::Writable for R8Tmr1IntFlagSpec {
+    type Safety = crate::Unsafe;
 }
 #[doc = "`reset()` method sets R8_TMR1_INT_FLAG to value 0"]
-impl crate::Resettable for R8_TMR1_INT_FLAG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
-}
+impl crate::Resettable for R8Tmr1IntFlagSpec {}
