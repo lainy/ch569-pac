@@ -1,5 +1,7 @@
 #[doc = "Register `R8_SAFE_ACCESS_SIG` reader"]
 pub type R = crate::R<R8SafeAccessSigSpec>;
+#[doc = "Register `R8_SAFE_ACCESS_SIG` writer"]
+pub type W = crate::W<R8SafeAccessSigSpec>;
 #[doc = "Field `RB_SAFE_ACC_MODE` reader - current safe accessing mode"]
 pub type RbSafeAccModeR = crate::FieldReader;
 #[doc = "Field `RB_SAFE_ACC_TIMER` reader - safe accessing timer bit mask"]
@@ -16,12 +18,17 @@ impl R {
         RbSafeAccTimerR::new((self.bits >> 4) & 7)
     }
 }
-#[doc = "safe accessing sign register\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_safe_access_sig::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+impl W {}
+#[doc = "safe accessing sign register\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_safe_access_sig::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_safe_access_sig::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct R8SafeAccessSigSpec;
 impl crate::RegisterSpec for R8SafeAccessSigSpec {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`r8_safe_access_sig::R`](R) reader structure"]
 impl crate::Readable for R8SafeAccessSigSpec {}
+#[doc = "`write(|w| ..)` method takes [`r8_safe_access_sig::W`](W) writer structure"]
+impl crate::Writable for R8SafeAccessSigSpec {
+    type Safety = crate::Unsafe;
+}
 #[doc = "`reset()` method sets R8_SAFE_ACCESS_SIG to value 0"]
 impl crate::Resettable for R8SafeAccessSigSpec {}

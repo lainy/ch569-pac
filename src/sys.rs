@@ -243,7 +243,7 @@ impl RegisterBlock {
         &self.r32_pb_smt
     }
 }
-#[doc = "R8_SAFE_ACCESS_SIG (r) register accessor: safe accessing sign register\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_safe_access_sig::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@r8_safe_access_sig`] module"]
+#[doc = "R8_SAFE_ACCESS_SIG (rw) register accessor: safe accessing sign register\n\nYou can [`read`](crate::Reg::read) this register and get [`r8_safe_access_sig::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`r8_safe_access_sig::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@r8_safe_access_sig`] module"]
 #[doc(alias = "R8_SAFE_ACCESS_SIG")]
 pub type R8SafeAccessSig = crate::Reg<r8_safe_access_sig::R8SafeAccessSigSpec>;
 #[doc = "safe accessing sign register"]
